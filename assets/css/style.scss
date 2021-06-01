@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800;900&family=Yanone+Kaffeesatz:wght@300;400;500;600;700&display=swap');
 
 $titleColor: #414042;
 $textColor: #2d2d2a;
@@ -6,6 +7,8 @@ $themeColor: #c0b298;
 $blackColor: #000;
 $titleFonts: 'Poppins', sans-serif;
 $textFonts: 'Montserrat', sans-serif;
+$secondayFonts: 'Yanone Kaffeesatz', sans-serif;
+$workSans: 'Work Sans', sans-serif;
 * {
 	margin: 0;
 	padding: 0;
@@ -97,6 +100,9 @@ body {
 	padding: 15px 30px;
 	background: $themeColor;
 	position: relative;
+	@media (max-width: 767px) {
+		padding: 15px 0px;
+	}
 	&.sticky {
 		position: fixed;
 		left: 0;
@@ -159,7 +165,8 @@ body {
 					color: $textColor;
 					padding: 18px 15px;
 					transition: all 0.4s ease-in-out 0s;
-					&:hover {
+					&:hover,
+					&.active {
 						background: $textColor;
 						color: $themeColor;
 					}
@@ -704,19 +711,19 @@ body {
 		font-size: 12pt;
 		margin-bottom: 40px;
 	}
-	.contact-btn {
-		font-size: 18px;
-		padding: 20px 40px;
-		background-color: $textColor;
-		color: #fff;
-		font-weight: 500;
-		line-height: 18px;
-		display: inline-block;
-		border-radius: 5px;
-		&:hover {
-			background: $themeColor;
-			color: $textColor;
-		}
+}
+.contact-btn {
+	font-size: 18px;
+	padding: 20px 40px;
+	background-color: $textColor;
+	color: #fff;
+	font-weight: 500;
+	line-height: 18px;
+	display: inline-block;
+	border-radius: 5px;
+	&:hover {
+		background: $themeColor;
+		color: $textColor;
 	}
 }
 .looling-for-area {
@@ -954,5 +961,168 @@ body {
 		font-size: 24px;
 		color: $textColor;
 		border-radius: 50%;
+	}
+}
+.breadcumb-area {
+	position: relative;
+	padding: 120px 0px 180px;
+	z-index: 1;
+	overflow: hidden;
+	height: 470px;
+	@media (max-width: 767px) {
+		height: 350px;
+	}
+	&::before {
+		background-image: linear-gradient(250deg, #2d2d2a 0%, #c0b298 94%);
+		opacity: 0.81;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		content: '';
+		left: 0;
+		top: 0;
+	}
+	.breadcumb-shape {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		fill: #fff;
+	}
+}
+.breadcumb-title {
+	text-align: center;
+	color: #fff;
+	font-family: $titleFonts;
+	font-size: 65px;
+	font-weight: 400;
+	text-transform: uppercase;
+	padding-bottom: 30px;
+	margin-bottom: 0;
+	position: relative;
+	@media (max-width: 991px) {
+		font-size: 50px;
+	}
+	@media (max-width: 767px) {
+		font-size: 35px;
+	}
+	&::before {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		content: '';
+		height: 4px;
+		width: 60px;
+		background: #fff;
+		bottom: 0;
+	}
+}
+.breadcumb-shape {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	line-height: 0;
+	direction: ltr;
+	svg {
+		display: block;
+		width: calc(100% + 1.3px);
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(200% + 1.3px);
+		height: 470px;
+	}
+}
+.content-area {
+	padding: 80px 0px 120px;
+}
+.property-title {
+	text-transform: uppercase;
+	font-size: 80px;
+	color: $themeColor;
+	text-transform: uppercase;
+	font-family: $secondayFonts;
+	font-weight: 400;
+	margin-bottom: 60px;
+	@media (max-width: 1200px) {
+		font-size: 60px;
+	}
+	@media (max-width: 991px) {
+		font-size: 50px;
+	}
+	@media (max-width: 767px) {
+		font-size: 30px;
+		margin-bottom: 40px;
+	}
+}
+.property-content {
+	font-family: $workSans;
+	p {
+		margin-bottom: 1.6em;
+		line-height: 2em;
+		font-size: 16px;
+	}
+	ul {
+		list-style: disc;
+		margin: 0 0 1.5em 3em;
+		line-height: 2em;
+		font-size: 16px;
+	}
+}
+.callto-action-area {
+	background-attachment: fixed;
+	position: relative;
+	z-index: 1;
+	padding: 120px 0;
+	text-align: center;
+	&::before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: #131312;
+		opacity: 0.75;
+		z-index: -1;
+	}
+	h2 {
+		color: #fff;
+		font-family: $titleFonts;
+		font-size: 32px;
+		font-weight: 300;
+		text-transform: capitalize;
+		line-height: 1em;
+		letter-spacing: -0.9px;
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		margin-bottom: 20px;
+		@media (max-width: 767px) {
+			font-size: 24px;
+		}
+	}
+	p {
+		color: #fff;
+		font-family: $titleFonts;
+		font-size: 16px;
+		font-weight: 200;
+		margin-bottom: 40px;
+	}
+	.devaidar {
+		height: 7px;
+		width: 100%;
+		background: $themeColor;
+		margin-bottom: 25px;
+	}
+	h3 {
+		font-family: $titleFonts;
+		font-size: 41px;
+		font-weight: 600;
+		letter-spacing: 2.9px;
+		color: #fff;
+		margin-bottom: 0;
+		@media (max-width: 767px) {
+			font-size: 30px;
+		}
 	}
 }
