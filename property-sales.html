@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="assets/css/default.css" />
 		<link rel="stylesheet" href="assets/css/style.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Key Consultants Mallorca – Real Estate Mallorca</title>
+		<title>property sales – Real Estate Mallorca</title>
 	</head>
 
 	<body>
@@ -505,63 +505,5 @@
 		<script type="text/javascript" src="assets/js/slick.min.js"></script>
 		<script type="text/javascript" src="assets/js/select2.min.js"></script>
 		<script type="text/javascript" src="assets/js/scripts.js"></script>
-		<script>
-			// Initialize slider:
-			$(document).ready(function () {
-				$('.noUi-handle').on('click', function () {
-					$(this).width(50);
-				});
-				// price slider
-				let priceSlider = document.getElementById('price');
-				let moneyFormat = wNumb({
-					decimals: 0,
-					thousand: ',',
-					prefix: '€',
-				});
-				noUiSlider.create(priceSlider, {
-					start: [0, 10000],
-					step: 1,
-					range: {
-						min: [0],
-						max: [10000],
-					},
-					format: moneyFormat,
-					connect: true,
-				});
-
-				// Set visual min and max values and also update value hidden form inputs
-				priceSlider.noUiSlider.on('update', function (values, handle) {
-					document.getElementById('price-value1').innerHTML = values[0];
-					document.getElementById('price-value2').innerHTML = values[1];
-					document.getElementsByName('min-value').value = moneyFormat.from(values[0]);
-					document.getElementsByName('max-value').value = moneyFormat.from(values[1]);
-				});
-
-				// bedrooms slider
-				let bedroomsSlider = document.getElementById('bedrooms');
-
-				noUiSlider.create(bedroomsSlider, {
-					start: [0, 7],
-					step: 1,
-					range: {
-						min: [0],
-						max: [7],
-					},
-					format: wNumb({
-						decimals: 0,
-						thousand: ',',
-					}),
-					connect: true,
-				});
-
-				// Set visual min and max values and also update value hidden form inputs
-				bedroomsSlider.noUiSlider.on('update', function (values, handle) {
-					document.getElementById('bedrooms-value1').innerHTML = values[0];
-					document.getElementById('bedrooms-value2').innerHTML = values[1];
-					document.getElementsByName('min-value').value;
-					document.getElementsByName('max-value').value;
-				});
-			});
-		</script>
 	</body>
 </html>
