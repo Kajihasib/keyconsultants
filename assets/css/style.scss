@@ -969,6 +969,13 @@ body {
 	z-index: 1;
 	overflow: hidden;
 	height: 470px;
+	&.breadcumb-opacity {
+		&::before {
+			filter: brightness(70%) contrast(100%) saturate(100%) blur(0) hue-rotate(0deg);
+			background-image: linear-gradient(250deg, #2d2d2a 0%, #c0b298 94%);
+			opacity: 0.81;
+		}
+	}
 	@media (max-width: 767px) {
 		height: 350px;
 	}
@@ -1041,7 +1048,7 @@ body {
 	text-transform: uppercase;
 	font-size: 80px;
 	color: $themeColor;
-	text-transform: uppercase;
+	text-align: center;
 	font-family: $secondayFonts;
 	font-weight: 400;
 	margin-bottom: 60px;
@@ -1194,5 +1201,89 @@ body {
 		font-size: 16px;
 		line-height: 26px;
 		font-family: $workSans;
+	}
+}
+.careers-content {
+	text-align: center;
+	h2 {
+		color: $textColor;
+		font-family: $titleFonts;
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 1.7em;
+		letter-spacing: -1.2px;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 17px;
+		font-weight: 400;
+		font-family: $workSans;
+		line-height: 2em;
+	}
+}
+.accordion-wrap {
+	background: #fff;
+	box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.12);
+	margin-bottom: 20px;
+	h5 {
+		padding: 30px 35px;
+		font-size: 16px;
+		font-weight: 600;
+		text-transform: uppercase;
+		cursor: pointer;
+		margin-bottom: 0;
+		font-family: $workSans;
+		position: relative;
+		&::before {
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+			content: '\f0da';
+			font-family: 'fontawesome';
+			font-size: 18px;
+			color: $titleColor;
+			transition: all 0.4s ease-in-out 0s;
+		}
+		&[aria-expanded='true'] {
+			&::before {
+				content: '\f0d7';
+			}
+		}
+	}
+	.content {
+		padding: 35px;
+		padding-top: 0px;
+		font-family: $workSans;
+		p {
+			margin-bottom: 1.6em;
+			color: #bfbfbf;
+			font-size: 16px;
+			line-height: 1.8em;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		ol {
+			margin-bottom: 1.6em;
+			color: #bfbfbf;
+			font-size: 16px;
+			line-height: 1.8em;
+			margin: 0 0 1.5em 3em;
+		}
+	}
+	&.accordion-wrap2 {
+		h5 {
+			color: #8f8470;
+		}
+		.content {
+			p {
+				color: $textColor;
+			}
+			ol {
+				color: $textColor;
+			}
+		}
 	}
 }

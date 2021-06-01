@@ -399,7 +399,9 @@
 .fs-24 {
 	font-size: 24px !important;
 }
-
+.mt-120 {
+	margin-top: 120px;
+}
 @media (max-width: 767px) {
 	.fs-30 {
 		font-size: 20px !important;
